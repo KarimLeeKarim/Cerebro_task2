@@ -13,8 +13,7 @@ export const DecimalInput: React.FC<Props> = ({ value, onChange, className }) =>
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
-    const isValid =  /(\d+(?:\.\d+)?)|^$/.test(input);
-
+    const isValid =  /^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)|^$|^-/.test(input);
     
     if (isValid) {
       setInputValue(input);
